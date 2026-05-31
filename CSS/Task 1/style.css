@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.pikachu-img {
+    width: 550px;
+    position: absolute;
+    left: 42%;
+    top: 15%;
+}
+
+.background-left {
+    width: 55vw;
+    height: 100vh;
+    background-color: #FBC509;
+    padding-left: 40px;
+}
+
+.pokemon-logo {
+    width: 150px;
+    margin-top: 15px;
+}
+
+.text-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.text-1 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 8px;
+
+}
+
+.text-2 {
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 0.7;
+}
+
+.text-3 {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+}
+
+.text-4 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.pokeball-svg {
+    width: 280px;
+    filter: opacity(25%);
+}
+
+.background-right {
+    width: 45vw;
+    height: 100vh;
+    background-color: #FBE8B3;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 35px;
+    padding-right: 50px;
+}
+
+.hamburger {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 4px;
+    background: #111;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.pagination {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #f4c400;
+}
+
+.dot.active {
+    background: #000;
+    transform: scale(1.10);
+}
