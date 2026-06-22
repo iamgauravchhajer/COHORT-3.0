@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 8px 14px;
+    cursor: pointer;
+    border: 1px solid #3b82f6;
+    background-color: white;
+    color: #3b82f6;
+    border-radius: 4px;
+}
+
+.demo-section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #4b5563;
+}
+
+/* Event Propagation */
+.grandparent {
+    padding: 30px;
+    border: 2px solid #fbbf24;
+    background-color: #fef3c7;
+    text-align: center;
+}
+
+.parent {
+    padding: 30px;
+    margin-top: 10px;
+    border: 2px solid #60a5fa;
+    background-color: #eff6ff;
+}
+
+.child-btn {
+    padding: 15px 30px;
+    margin-top: 10px;
+    border: 2px solid #34d399;
+    background-color: #ecfdf5;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.controls {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.console-output {
+    background-color: #1f2937;
+    color: #10b981;
+    padding: 15px;
+    font-family: monospace;
+    min-height: 80px;
+    border-radius: 4px;
+}
+
+/* Pipeline */
+.pipeline-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    background-color: #f9fafb;
+}
+
+.pipeline-top {
+    display: flex;
+    gap: 50px;
+}
+
+.pipeline-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    border: 1px solid #d1d5db;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.arrow {
+    margin: 5px 0;
+    color: #6b7280;
+}

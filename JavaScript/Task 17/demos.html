@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demos</title>
+    <link rel="stylesheet" href="demos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Javascript Demos</h1>
+            <a href="index.html">Back to Task Manager</a>
+        </header>
+        
+        <section class="demo-section">
+            <h2>1. Event Propagation</h2>
+            <p>Test bubbling vs capturing by clicking the buttons.</p>
+            
+            <div class="controls">
+                <button id="btnBubbling" class="btn">Test Bubbling Mode</button>
+                <button id="btnCapturing" class="btn">Test Capturing Mode</button>
+                <button id="btnClearConsole" class="btn">Clear Logs</button>
+            </div>
+
+            <div class="propagation-demo">
+                <div class="grandparent" id="grandparent">
+                    Grandparent Box
+                    <div class="parent" id="parent">
+                        Parent Box
+                        <br><br>
+                        <button class="child-btn" id="child">Child Button</button>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="console-output" id="consoleOutput"></div>
+        </section>
+
+        <hr>
+        <br>
+
+        <section class="demo-section">
+            <h2>2. Attributes vs Properties</h2>
+            <p>Type something new into the box below, then click the buttons to see how they differ!</p>
+            
+            <div style="margin-bottom: 15px; padding: 15px; border: 1px solid #e5e7eb; background: white; border-radius: 4px;">
+                <label for="demoInput" style="font-weight: 500; margin-right: 10px;">Test Input:</label>
+                <input type="text" id="demoInput" value="Initial Value" style="padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; width: 200px;">
+            </div>
+
+            <div class="controls">
+                <button id="btnCheckProperty" class="btn">Check input.value (Property)</button>
+                <button id="btnCheckAttribute" class="btn">Check getAttribute() (Attribute)</button>
+            </div>
+            
+            <div class="console-output" id="attrConsoleOutput" style="min-height: 60px;"></div>
+        </section>
+
+        <hr>
+        <br>
+
+        <section class="demo-section">
+            <h2>3. Browser Rendering Pipeline</h2>
+            
+            <div class="pipeline-diagram">
+                <div class="pipeline-top">
+                    <div class="pipeline-column">
+                        <div class="card">HTML</div>
+                        <div class="arrow">↓</div>
+                        <div class="card">Parsing</div>
+                        <div class="arrow">↓</div>
+                        <div class="card">Tokenization</div>
+                        <div class="arrow">↓</div>
+                        <div class="card">DOM Tree</div>
+                    </div>
+                    <div class="pipeline-column">
+                        <div class="card">CSS</div>
+                        <div class="arrow">↓</div>
+                        <div class="card">Parsing</div>
+                        <div class="arrow">↓</div>
+                        <div class="card">CSSOM Tree</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↘ DOM + CSSOM ↙</div>
+                <div class="card">Render Tree</div>
+                
+                <div class="arrow">↓</div>
+                <div class="card">Layout</div>
+                
+                <div class="arrow">↓</div>
+                <div class="card">Paint</div>
+
+                <div class="arrow">↓</div>
+                <div class="card">Screen</div>
+
+                <br>
+                <h3>Then</h3>
+                <br>
+
+                <div class="card">JavaScript</div>
+                <div class="arrow">↓</div>
+                <div class="card">DOM Selection</div>
+                <div class="arrow">↓</div>
+                <div class="card">DOM Manipulation</div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="demos.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <div class="user-avatar">
+                    <i class='bx bxs-user'></i>
+                </div>
+                <h1>Task Manager</h1>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-outline" onclick="window.location.href='demos.html'">
+                    DEMOS
+                </button>
+                <button class="btn btn-primary">
+                    <i class='bx bx-plus'></i> Create Task
+                </button>
+                <button class="btn btn-theme">
+                     <i class='bx bx-sun theme-icon'></i>
+                </button>
+            </div>
+        </header>
+
+        <hr class="header-divider">
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+            <div class="card card-blue">
+                <div class="icon-wrapper">
+                    <i class='bx bx-clipboard'></i>
+                </div>
+                <div class="card-content">
+                    <p class="card-title">All tasks</p>
+                    <h2 class="card-number" id="all-tasks">0</h2>
+                </div>
+            </div>
+            <div class="card card-orange">
+                <div class="icon-wrapper">
+                    <i class='bx bx-hourglass'></i>
+                </div>
+                <div class="card-content">
+                    <p class="card-title">Pending tasks</p>
+                    <h2 class="card-number" id="pending-tasks">0</h2>
+                </div>
+            </div>
+            <div class="card card-green">
+                <div class="icon-wrapper">
+                    <i class='bx bx-check-circle'></i>
+                </div>
+                <div class="card-content">
+                    <p class="card-title">Completed tasks</p>
+                    <h2 class="card-number" id="completed-tasks">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search tasks or category..." class="search-input">
+            </div>
+            
+            <div class="search-box" style="width: auto; flex: 0 0 200px;">
+                <i class='bx bx-filter-alt'></i>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="All">All Categories</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Study">Study</option>
+                    <option value="Health">Health</option>
+                </select>
+            </div>
+
+            <button id="btnClearAll" class="btn btn-outline" style="margin-left: auto;">
+                <i class='bx bx-trash'></i> Clear All
+            </button>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list">
+            <div class="table-header">
+                <div class="col-checkbox">
+                    <input type="checkbox" class="custom-checkbox" checked>
+                </div>
+                <div class="col-name">Task Name</div>
+                <div class="col-category">Task Category</div>
+                <div class="col-actions"></div>
+            </div>
+            <!-- <div class="table-row">
+                <div class="col-checkbox">
+                    <input type="checkbox" class="custom-checkbox">
+                </div>
+                <div class="col-name">-</div>
+                <div class="col-category">-</div>
+                <div class="col-actions">
+                    <button class="btn btn-edit">
+                        <i class='bx bx-edit-alt'></i> Edit
+                    </button>
+                    <button class="btn btn-delete">
+                        <i class='bx bx-trash'></i> Delete
+                    </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Create Task Modal -->
+    <div class="modal-overlay" id="createTaskModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="model-text">Create Task</h2>
+                <button class="btn-close" id="closeModalBtn">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <form class="modal-body" id="createTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <div class="input-wrapper">
+                        <i class='bx bx-edit-alt'></i>
+                        <input type="text" id="taskTitle" name="taskTitle" placeholder="Enter task title..." >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taskCategory">Category</label>
+                    <div class="input-wrapper">
+                        <i class='bx bx-folder'></i>
+                        <select id="taskCategory" name="taskCategory" >
+                            <option value="" disabled selected>Select category...</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Study">Study</option>
+                            <option value="Health">Health</option>
+                        </select>
+                        <i class='bx bx-chevron-down chevron-icon'></i>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-submit">
+                    <i class='bx bx-check-circle'></i> Done
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
