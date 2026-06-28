@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisab Kitab | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">Hisab Kitab</h1>
+        
+        <button class="add-btn">
+            <i class="ri-add-line"></i> Add Transaction
+        </button>
+        
+        <div class="menu">
+            <a href="dashboard.html" class="menu-item active">
+                <i class="ri-home-4-line"></i> Dashboard
+            </a>
+            <a href="settings/settings.html" class="menu-item">
+                <i class="ri-settings-3-line"></i> Settings
+            </a>
+        </div>
+        
+        <button class="logout-btn">
+            <i class="ri-logout-box-r-line"></i> Logout
+        </button>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="dark-mode-toggle">
+                <div class="toggle-track">
+                    <div class="toggle-knob"></div>
+                </div>
+                <span>dark mode</span>
+            </div>
+            <div class="user-profile">
+                <span>username</span>
+                <div class="avatar-box">
+                    <i class="ri-user-3-fill"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-chart-container">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Cash Flow</h2>
+                    <div class="legend">
+                        <span class="legend-item"><span class="color-dot green"></span> Income</span>
+                        <span class="legend-item"><span class="color-dot pink"></span> Expense</span>
+                    </div>
+                </div>
+                <div class="chart-body"></div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="icon-box yellow">
+                        <i class="ri-wallet-3-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">Current Bal</p>
+                        <p class="stat-value">$0.00</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box green">
+                        <i class="ri-arrow-left-right-line" style="transform: rotate(45deg); display: inline-block;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Income</p>
+                        <p class="stat-value">$0.00</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box pink">
+                        <i class="ri-arrow-left-right-line" style="transform: rotate(135deg); display: inline-block;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Expense</p>
+                        <p class="stat-value">$0.00</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-box blue">
+                        <i class="ri-arrow-left-right-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Transaction</p>
+                        <p class="stat-value">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-row">
+            <div class="search-box">
+                <i class="ri-search-line"></i>
+                <input type="text" placeholder="Search transactions">
+            </div>
+            <select class="filter-box" id="categoryFilter">
+                <option value="All">All Types</option>
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+            </select>
+            <button id="btnClearAll" class="clear-btn">Clear All</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="transactionModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>ADD TRANSACTION</h2>
+                <button class="close-btn" id="closeModalBtn">X</button>
+            </div>
+            
+            <form class="modal-body">
+                <div class="form-group">
+                    <label>TYPE</label>
+                    <select id="transactionType">
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>DESCRIPTION</label>
+                    <input type="text" id="transactionDesc" placeholder="Enter Description">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group form-row-half">
+                        <label>AMOUNT</label>
+                        <div class="amount-input">
+                            <span>$</span>
+                            <input type="number" id="transactionAmount">
+                        </div>
+                    </div>
+                    <div class="form-group form-row-half">
+                        <label>DATE</label>
+                        <div class="date-input">
+                            <input type="date" id="transactionDate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>CATEGORY</label>
+                    <select id="transactionCategory">
+                        <option>Select a category</option>
+                        <option>Food & Dining</option>
+                        <option>Salary</option>
+                        <option>Shopping</option>
+                        <option>Utilities</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="save-btn">SAVE TRANSACTION</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

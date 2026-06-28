@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisab Kitab | Settings</title>
+    <link rel="stylesheet" href="../dashboard.css">
+    <link rel="stylesheet" href="setting.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1 class="logo">Hisab Kitab</h1>
+
+        <button class="add-btn">
+            <i class="ri-add-line"></i> Add Transaction
+        </button>
+
+        <div class="menu">
+            <a href="../dashboard.html" class="menu-item">
+                <i class="ri-home-4-line"></i> Dashboard
+            </a>
+            <a href="settings.html" class="menu-item active">
+                <i class="ri-settings-3-line"></i> Settings
+            </a>
+        </div>
+
+        <button class="logout-btn">
+            <i class="ri-logout-box-r-line"></i> Logout
+        </button>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <div class="dark-mode-toggle">
+                <div class="toggle-track">
+                    <div class="toggle-knob"></div>
+                </div>
+                <span>dark mode</span>
+            </div>
+            <div class="user-profile">
+                <span>username</span>
+                <div class="avatar-box">
+                    <i class="ri-user-3-fill"></i>
+                </div>
+            </div>
+        </div>
+        <div class="settings-box">
+            <div class="settings-header">
+                <h2>SETTINGS</h2>
+            </div>
+            <div class="settings-body">
+                <form class="settings-form">
+                    <div class="settings-row">
+                        <div class="settings-group">
+                            <label>FULL NAME</label>
+                            <input type="text" id="fullNameInput" value="username">
+                        </div>
+                        <div class="settings-group">
+                            <label>PRIMARY CURRENCY</label>
+                            <select id="currencySelect">
+                                <option value="USD">USD ($)</option>
+                                <option value="INR">INR (₹)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="JPY">JPY (¥)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-settings-btn">SAVE CHANGES</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../script.js"></script>
+<script src="settings.js"></script>
+
+</html>

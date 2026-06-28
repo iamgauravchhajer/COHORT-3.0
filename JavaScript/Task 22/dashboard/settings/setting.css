@@ -1,0 +1,73 @@
+.settings-box {
+    background-color: #fdfae7;
+    border: 3px solid #000000;
+    width: 680px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.settings-header {
+    background-color: #fed43a;
+    border-bottom: 3px solid #000000;
+    padding: 15px 20px;
+}
+
+.settings-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.settings-body {
+    padding: 0px;
+}
+
+.settings-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-row {
+    display: flex;
+    gap: 20px;
+}
+
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 50%;
+}
+
+.settings-group label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.settings-group input,
+.settings-group select {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+}
+
+.save-settings-btn {
+    background-color: #98dbaa;
+    border: 3px solid #000000;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 5px;
+}
